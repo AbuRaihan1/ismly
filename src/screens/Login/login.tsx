@@ -1,4 +1,3 @@
-// import { useParams } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import {
   AppBar,
@@ -14,15 +13,12 @@ import Checkbox from "@mui/material/Checkbox";
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import LoadingView from "../../components/loading-view";
-import Constants from "../../utiils/Constants";
-import { loginType } from "../../utiils/ConstType";
-import Utils from "../../utiils/utils";
-
+import Constants from "../../utils/Constants";
+import { loginType } from "../../utils/ConstType";
+import Utils from "../../utils/utils";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./login.css";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
-// import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-// import ResponsiveAppBar from '../../components/AppBar/AppBar'
 export default function LoginScreen() {
   const { type } = useParams<{ type: loginType }>();
 
@@ -47,10 +43,14 @@ export default function LoginScreen() {
     },
   };
 
-
   const styles = {
     logginButton: {
       width: "100%",
+      margin: "10px 0px",
+    },
+    forgotPassword: {
+      cursor: "pointer",
+      textTransform: "capitalize",
     },
   };
 
@@ -67,7 +67,9 @@ export default function LoginScreen() {
           <AppBar position="static">
             <Toolbar>
               <IconButton onClick={() => setGoback(true)}>
-                <Box>back</Box>
+                <Box>
+                  <ArrowBackIosIcon />
+                </Box>
               </IconButton>
             </Toolbar>
           </AppBar>
@@ -91,14 +93,10 @@ export default function LoginScreen() {
                     type="email"
                     required
                     className="input_field"
+                    
                   />
                   <div className="checked_remember">
-                    <Checkbox
-                      {...label}
-                      // style={{
-                      //   color: "#00e676",
-                      // }}
-                    />
+                    <Checkbox {...label} />
                     <Typography>remember me</Typography>
                   </div>
                   <Button
@@ -107,6 +105,12 @@ export default function LoginScreen() {
                     variant="contained"
                   >
                     sign in
+                  </Button>
+                  <Button variant="text" sx={styles.forgotPassword}>
+                    Forgot Password?
+                  </Button>
+                  <Button variant="outlined" sx={styles.logginButton}>
+                    Create Account
                   </Button>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import Constants from "../utiils/Constants";
+import Constants from "../utils/Constants";
 
 export default function LoadingView() {
   return (

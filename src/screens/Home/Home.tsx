@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Constants from "../../utiils/Constants";
+import Constants from "../../utils/Constants";
 const Home = () => {
   const navigate = useNavigate();
 

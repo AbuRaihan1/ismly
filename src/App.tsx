@@ -22,9 +22,9 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<Home />}/>
-          <Route path="/" element={<Home />}/>
-          <Route path="/login/:type" element={<LoginScreen />}/>
+          <Route path="/*" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login/:type" element={<LoginScreen />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

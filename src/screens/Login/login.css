@@ -70,9 +70,11 @@
 }
 .checked_remember {
   display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
 .sign_in {
-    background: #ff5200 !important;
-    width: 100%;
+  background: #ff5200 !important;
+  width: 100%;
 }
