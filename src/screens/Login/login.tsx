@@ -63,7 +63,6 @@ export default function LoginScreen() {
       {isLoading && <LoadingView />}
       {Utils.isValidLoginType(type) ? (
         <div>
-          {/* <ResponsiveAppBar /> */}
           <AppBar position="static">
             <Toolbar>
               <IconButton onClick={() => setGoback(true)}>
@@ -93,7 +92,6 @@ export default function LoginScreen() {
                     type="email"
                     required
                     className="input_field"
-                    
                   />
                   <div className="checked_remember">
                     <Checkbox {...label} />

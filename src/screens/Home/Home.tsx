@@ -1,22 +1,81 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../utils/Constants";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
-
   return (
     <Container>
       <Box>
-        <Typography variant="h2">Hi,</Typography>
-        <Typography variant="body1">This is honme page</Typography>
-        <Button
-          onClick={() => navigate(Constants.navigationStack.studentLogin)}
-        >
-          Login as teacher
-        </Button>
-        <Button onClick={() => navigate("/login/student")}>
-          Login as student
-        </Button>
+        <Typography variant="h4">Login as a</Typography>
+
+        <div className="login_list_wrapper">
+          <div
+            className="login_option"
+            onClick={() => navigate(Constants.navigationStack.adminLogin)}
+          >
+            <div className="avatar_and_name">
+              <img src={Constants.images.admin} alt="admin" />
+              <p> Admin </p>
+            </div>
+            <div>
+              <ArrowForwardIcon />
+            </div>
+          </div>
+
+          <div
+            className="login_option"
+            onClick={() => navigate(Constants.navigationStack.campusAdminLogin)}
+          >
+            <div className="avatar_and_name">
+              <img src={Constants.images.campusAdmin} alt="admin" />
+              <p> Campus Admin </p>
+            </div>
+            <div>
+              <ArrowForwardIcon />
+            </div>
+          </div>
+
+          <div
+            className="login_option"
+            onClick={() => navigate(Constants.navigationStack.teacherLogin)}
+          >
+            <div className="avatar_and_name">
+              <img src={Constants.images.teacher} alt="teacher" />
+              <p> Teacher </p>
+            </div>
+            <div>
+              <ArrowForwardIcon />
+            </div>
+          </div>
+
+          <div
+            className="login_option"
+            onClick={() => navigate(Constants.navigationStack.parentsLogin)}
+          >
+            <div className="avatar_and_name">
+              <img src={Constants.images.parents} alt="parents" />
+              <p> Parents</p>
+            </div>
+            <div>
+              <ArrowForwardIcon />
+            </div>
+          </div>
+
+          <div
+            className="login_option"
+            onClick={() => navigate(Constants.navigationStack.studentLogin)}
+          >
+            <div className="avatar_and_name">
+              <img src={Constants.images.student} alt="student" />
+              <p> Student </p>
+            </div>
+            <div>
+              <ArrowForwardIcon />
+            </div>
+          </div>
+        </div>
       </Box>
     </Container>
   );

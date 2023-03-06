@@ -16,8 +16,6 @@ import AdbIcon from "@mui/icons-material/Adb";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-
-
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -42,7 +40,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{background : '#ff5200'}}>
+    <AppBar position="static" style={{ background: "#ff5200" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
