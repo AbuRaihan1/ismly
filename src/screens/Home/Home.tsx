@@ -5,10 +5,19 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
+  const homeStyle = {
+    loginAs : {
+      marginTop : '20px',
+      background : '#eeebeb',
+      padding : "5px",
+      borderRadius : "5px",
+      fontSize : "28px"
+    }
+  }
   return (
     <Container>
       <Box>
-        <Typography variant="h4">Login as a</Typography>
+        <Typography variant="h4" sx={homeStyle.loginAs}>Login as a</Typography>
 
         <div className="login_list_wrapper">
           <div
