@@ -102,7 +102,7 @@ export default function LoginScreen() {
             if (response === Constants.key.responseType.success) {
               navigate(Constants.navigationStack.dashboard);
             } else {
-              alert("failed to login. try again")
+              alert("failed to login. try again");
             }
 
             console.error(error);

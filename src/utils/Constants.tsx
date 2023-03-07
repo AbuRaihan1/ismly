@@ -1,4 +1,4 @@
-const Constants = {
+const Constants: any = {
   apiEnpoint: {
     endPointUrl: "https://ismschoool.com/efortshub",
   },
@@ -27,10 +27,48 @@ const Constants = {
   },
   colors: {
     halfTransparentBlack: "#02020288",
+    lightTheme: {
+      palette: {
+        mode: "light",
+        primary: {
+          main: "#ffa726",
+        },
+        secondary: {
+          main: "#f57c00",
+        },
+        background: {
+          default: "#f5f5f5",
+          paper: "#fff",
+        },
+        text: {
+          primary: "#333",
+          secondary: "#888",
+        },
+      },
+    },
+    darkTheme: {
+      palette: {
+        mode: "dark",
+        primary: {
+          main: "#ffa726",
+        },
+        secondary: {
+          main: "#f57c00",
+        },
+        background: {
+          default: "#222",
+          paper: "#333",
+        },
+        text: {
+          primary: "#fff",
+          secondary: "#ccc",
+        },
+      },
+    },
   },
   navigationStack: {
     home: "/",
-    dashboard:"/dashboard",
+    dashboard: "/dashboard",
     studentLogin: "/login/student",
     teacherLogin: "/login/teacher",
     adminLogin: "/login/admin",

@@ -45,13 +45,14 @@ const Home = () => {
     }
   }, []);
 
-  const homeStyle = {
+  const homeStyle: any = {
     loginAs: {
       marginTop: "100px",
       marginBottom: "20px",
       padding: "5px",
       borderRadius: "5px",
       textAlign: "center",
+      // color: Constants.colors.lightTheme.palette.primary.main,
     },
   };
   return (
