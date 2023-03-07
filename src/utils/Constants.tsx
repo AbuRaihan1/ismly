@@ -1,4 +1,7 @@
 const Constants = {
+  apiEnpoint: {
+    endPointUrl: "https://ismschoool.com/efortshub",
+  },
   images: {
     userProfile: require("../assets/images/user.png"),
     student: require("../assets/images/student.png"),
@@ -9,6 +12,14 @@ const Constants = {
   },
   icons: {},
   key: {
+    CookiesKey: {
+      loginToken: "login-token",
+      loginType: "login-type",
+    },
+    responseType: {
+      valid: "valid",
+      success: "success",
+    },
     loginType: {
       teacher: "teacher",
       student: "student",
@@ -19,6 +30,7 @@ const Constants = {
   },
   navigationStack: {
     home: "/",
+    dashboard:"/dashboard",
     studentLogin: "/login/student",
     teacherLogin: "/login/teacher",
     adminLogin: "/login/admin",

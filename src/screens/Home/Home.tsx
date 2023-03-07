@@ -1,8 +1,12 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useEffect } from "react";
+import { load } from "react-cookies";
+import { useNavigate } from "react-router-dom";
 import LoginAsOptions from "../../components/home-components/LoginAsOptions";
 import Constants from "../../utils/Constants";
 import "./Home.css";
 const Home = () => {
+  const navigate = useNavigate();
   const loginTypes: {
     icon: any;
     type: string;
@@ -34,6 +38,12 @@ const Home = () => {
       type: "Student",
     },
   ];
+
+  useEffect(() => {
+    if (load(Constants.key.CookiesKey.loginToken)) {
+      navigate(Constants.navigationStack.dashboard);
+    }
+  }, []);
 
   const homeStyle = {
     loginAs: {

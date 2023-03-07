@@ -11,8 +11,14 @@ import {
   Typography,
 } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+
 import { useEffect, useState } from "react";
+import cookie from "react-cookies";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+
+import axios from "axios";
+
+import { v4 as uuid } from "uuid";
 import LoadingView from "../../components/loading-view";
 import Constants from "../../utils/Constants";
 import { loginType } from "../../utils/ConstType";
@@ -63,7 +69,44 @@ export default function LoginScreen() {
         setIsPasswordError("use at least one digits");
         return;
       } else {
-        setIsPasswordError("login success");
+        // setIsPasswordError("login success");
+        setIsLoading(true);
+
+        const token = uuid();
+        // alert(token);
+
+        //save the token to session
+        cookie.save(Constants.key.CookiesKey.loginToken, token, {
+          maxAge: 3600 * 24 * 60,
+        });
+
+        axios
+          .post(Constants.apiEnpoint.endPointUrl + "/login", {
+            username: email,
+            password: password,
+            token: token,
+          })
+          .then((response) => {
+            // Handle successful response
+            console.log(response.data);
+            if (response.data === Constants.key.responseType.success) {
+              // navigate
+            }
+          })
+          .catch((error) => {
+            // Handle error response
+            setIsLoading(false);
+            // alert("login failed : " + error);
+            const response = "success";
+
+            if (response === Constants.key.responseType.success) {
+              navigate(Constants.navigationStack.dashboard);
+            } else {
+              alert("failed to login. try again")
+            }
+
+            console.error(error);
+          });
       }
     },
   };
