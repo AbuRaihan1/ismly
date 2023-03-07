@@ -1,90 +1,60 @@
 import { Box, Container, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import LoginAsOptions from "../../components/home-components/LoginAsOptions";
 import Constants from "../../utils/Constants";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./Home.css";
 const Home = () => {
-  const navigate = useNavigate();
+  const loginTypes: {
+    icon: any;
+    type: string;
+    navigationStack: any;
+  }[] = [
+    {
+      icon: Constants.images.admin,
+      navigationStack: Constants.navigationStack.adminLogin,
+      type: "Admin",
+    },
+    {
+      icon: Constants.images.campusAdmin,
+      navigationStack: Constants.navigationStack.campusAdminLogin,
+      type: "Campus Admin",
+    },
+    {
+      icon: Constants.images.teacher,
+      navigationStack: Constants.navigationStack.teacherLogin,
+      type: "Teacher",
+    },
+    {
+      icon: Constants.images.parents,
+      navigationStack: Constants.navigationStack.parentsLogin,
+      type: "Parents",
+    },
+    {
+      icon: Constants.images.student,
+      navigationStack: Constants.navigationStack.studentLogin,
+      type: "Student",
+    },
+  ];
+
   const homeStyle = {
-    loginAs : {
-      marginTop : '20px',
-      background : '#eeebeb',
-      padding : "5px",
-      borderRadius : "5px",
-      fontSize : "28px"
-    }
-  }
+    loginAs: {
+      marginTop: "100px",
+      marginBottom: "20px",
+      padding: "5px",
+      borderRadius: "5px",
+      textAlign: "center",
+    },
+  };
   return (
     <Container>
       <Box>
-        <Typography variant="h4" sx={homeStyle.loginAs}>Login as a</Typography>
+        <Typography variant="h4" sx={homeStyle.loginAs}>
+          Ismly
+        </Typography>
 
-        <div className="login_list_wrapper">
-          <div
-            className="login_option"
-            onClick={() => navigate(Constants.navigationStack.adminLogin)}
-          >
-            <div className="avatar_and_name">
-              <img src={Constants.images.admin} alt="admin" />
-              <p> Admin </p>
-            </div>
-            <div>
-              <ArrowForwardIcon />
-            </div>
-          </div>
-
-          <div
-            className="login_option"
-            onClick={() => navigate(Constants.navigationStack.campusAdminLogin)}
-          >
-            <div className="avatar_and_name">
-              <img src={Constants.images.campusAdmin} alt="admin" />
-              <p> Campus Admin </p>
-            </div>
-            <div>
-              <ArrowForwardIcon />
-            </div>
-          </div>
-
-          <div
-            className="login_option"
-            onClick={() => navigate(Constants.navigationStack.teacherLogin)}
-          >
-            <div className="avatar_and_name">
-              <img src={Constants.images.teacher} alt="teacher" />
-              <p> Teacher </p>
-            </div>
-            <div>
-              <ArrowForwardIcon />
-            </div>
-          </div>
-
-          <div
-            className="login_option"
-            onClick={() => navigate(Constants.navigationStack.parentsLogin)}
-          >
-            <div className="avatar_and_name">
-              <img src={Constants.images.parents} alt="parents" />
-              <p> Parents</p>
-            </div>
-            <div>
-              <ArrowForwardIcon />
-            </div>
-          </div>
-
-          <div
-            className="login_option"
-            onClick={() => navigate(Constants.navigationStack.studentLogin)}
-          >
-            <div className="avatar_and_name">
-              <img src={Constants.images.student} alt="student" />
-              <p> Student </p>
-            </div>
-            <div>
-              <ArrowForwardIcon />
-            </div>
-          </div>
-        </div>
+        {loginTypes.map((v) => {
+          console.log(v);
+          return <LoginAsOptions {...v} />;
+        })}
       </Box>
     </Container>
   );

@@ -1,3 +1,4 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import LockIcon from "@mui/icons-material/Lock";
 import {
   AppBar,
@@ -16,7 +17,6 @@ import LoadingView from "../../components/loading-view";
 import Constants from "../../utils/Constants";
 import { loginType } from "../../utils/ConstType";
 import Utils from "../../utils/utils";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./login.css";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 export default function LoginScreen() {
@@ -24,9 +24,10 @@ export default function LoginScreen() {
 
   const [goBack, setGoback] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const [isPasswordError, setIsPasswordError] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
 
-  console.log(type);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (goBack) {
@@ -35,11 +36,35 @@ export default function LoginScreen() {
   }, [goBack]);
 
   const functionHandler = {
-    loginHandler: () => {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 5000);
+    loginHandler: (e: any) => {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+
+      // email validation
+      const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+      if (!isValidEmail.test(email)) {
+        setIsPasswordError("invalid email");
+      }
+
+      // password valiation
+      const oneWordUpperCase = /(?=.*[A-Z])/;
+      const eightCharacter = /.{8}$/;
+      const oneDigit = /(?=.*[0-9])/;
+
+      if (!eightCharacter.test(password)) {
+        setIsPasswordError("password should be minimum 8 character");
+        return;
+      } else if (!oneWordUpperCase.test(password)) {
+        setIsPasswordError("use at least one capital letter");
+        return;
+      } else if (!oneDigit.test(password)) {
+        setIsPasswordError("use at least one digits");
+        return;
+      } else {
+        setIsPasswordError("login success");
+      }
     },
   };
 
@@ -51,6 +76,12 @@ export default function LoginScreen() {
     forgotPassword: {
       cursor: "pointer",
       textTransform: "capitalize",
+    },
+    passwordError: {
+      marginTop: "10px",
+      color: "red",
+      textTransform: "capitalize",
+      fontWeight: "bold",
     },
   };
 
@@ -73,46 +104,51 @@ export default function LoginScreen() {
             </Toolbar>
           </AppBar>
           <Container>
-            <div className="login_form_wrapper">
-              <div className="login_form">
-                <LockIcon className="lockIcon" />
-                <div className="inputs">
-                  <TextField
-                    id="outlined-basic"
-                    label="Email"
-                    variant="outlined"
-                    type="email"
-                    required
-                    className="input_field"
-                  />
-                  <TextField
-                    id="outlined-basic"
-                    label="Password"
-                    variant="outlined"
-                    type="email"
-                    required
-                    className="input_field"
-                  />
-                  <div className="checked_remember">
-                    <Checkbox {...label} />
-                    <Typography>remember me</Typography>
+            <form action="" onSubmit={functionHandler.loginHandler}>
+              <div className="login_form_wrapper">
+                <div className="login_form">
+                  <LockIcon className="lockIcon" />
+
+                  <div className="inputs">
+                    <TextField
+                      label="Email"
+                      variant="outlined"
+                      type="email"
+                      className="input_field"
+                      name="email"
+                    />
+                    <TextField
+                      label="Password"
+                      variant="outlined"
+                      type="password"
+                      className="input_field"
+                      name="password"
+                    />
+                    <Typography sx={styles.passwordError}>
+                      {isPasswordError}
+                    </Typography>
+                    <div className="checked_remember">
+                      <Checkbox {...label} />
+
+                      <Typography>remember me</Typography>
+                    </div>
+                    <Button
+                      sx={styles.logginButton}
+                      variant="contained"
+                      type="submit"
+                    >
+                      sign in
+                    </Button>
+                    <Button variant="text" sx={styles.forgotPassword}>
+                      Forgot Password?
+                    </Button>
+                    <Button variant="outlined" sx={styles.logginButton}>
+                      Create Account
+                    </Button>
                   </div>
-                  <Button
-                    onClick={functionHandler.loginHandler}
-                    sx={styles.logginButton}
-                    variant="contained"
-                  >
-                    sign in
-                  </Button>
-                  <Button variant="text" sx={styles.forgotPassword}>
-                    Forgot Password?
-                  </Button>
-                  <Button variant="outlined" sx={styles.logginButton}>
-                    Create Account
-                  </Button>
                 </div>
               </div>
-            </div>
+            </form>
           </Container>
         </div>
       ) : (
