@@ -4,7 +4,7 @@ import { load } from "react-cookies";
 import LoadingView from "../../components/loading-view";
 import Constants from "../../utils/Constants";
 import { loginType } from "../../utils/ConstType";
-import TeacherDashboard from '../Dashboard/teacher/teacher-dashboard'
+import TeacherDashboard from "../Dashboard/teacher/teacher-dashboard";
 //cookie.load("login-type");
 
 const Dashboard = () => {

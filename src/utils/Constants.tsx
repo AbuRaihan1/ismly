@@ -10,7 +10,15 @@ const Constants: any = {
     teacher: require("../assets/images/teacher.png"),
     campusAdmin: require("../assets/images/campus.png"),
   },
-  icons: {},
+  icons: {
+    messages: require("../assets/icons/message.png"),
+    attendance: require("../assets/icons/instruction.png"),
+    behavior: require("../assets/icons/feedback.png"),
+    grading: require("../assets/icons/best.png"),
+    classNotes: require("../assets/icons/classNotes.png"),
+    calendar: require("../assets/icons/calendar.png"),
+    studentReports: require("../assets/icons/report.png"),
+  },
   key: {
     CookiesKey: {
       loginToken: "login-token",

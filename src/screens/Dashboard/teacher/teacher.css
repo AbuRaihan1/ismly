@@ -1,3 +1,6 @@
+.teacher_option {
+  margin-bottom: 15px !important;
+}
 .optin_content:hover {
   background: var(--hb-light-secondary);
 }
