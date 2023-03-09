@@ -3,7 +3,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
@@ -16,8 +16,9 @@ import Constants from "./utils/Constants";
 
 // Dark Theme
 
+const themeData: any = Constants.colors.lightTheme;
 
-const theme = createTheme(Constants.colors.lightTheme);
+const theme = createTheme(themeData);
 
 function App() {
   return (

@@ -1,12 +1,14 @@
-import Box from "@mui/material/Box";
-import Constants from "../../../utils/Constants";
 import AddIcon from "@mui/icons-material/Add";
+import Box from "@mui/material/Box";
+import EfImageView from "../../../components/EfImageView";
+import Constants from "../../../utils/Constants";
 
 const CampusAdminDrawerData = ({ icon, name }: { icon: any; name: string }) => {
   const drawerStyle = {
     drawerItemStyle: {
       display: "flex",
       alignItems: "center",
+      justifyContent: "space-between",
       gap: "10px",
       border: `1px solid ${Constants.colors.lightTheme.palette.primary.main}`,
       margin: "5px 0",
@@ -26,11 +28,16 @@ const CampusAdminDrawerData = ({ icon, name }: { icon: any; name: string }) => {
   return (
     <div>
       <Box sx={drawerStyle.drawerItemStyle} className="drawer_option">
+        <p>{name}</p>
         <p>
           {" "}
           <AddIcon sx={drawerStyle.addIcon} />
+          <EfImageView
+            src={require("../../../assets/icons/instruction.png")}
+            tint="blue"
+            alt="test"
+          />
         </p>
-        <p>{name}</p>
       </Box>
     </div>
   );

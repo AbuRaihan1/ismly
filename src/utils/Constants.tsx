@@ -1,4 +1,4 @@
-const Constants: any = {
+const Constants = {
   apiEnpoint: {
     endPointUrl: "https://ismschoool.com/efortshub",
   },
