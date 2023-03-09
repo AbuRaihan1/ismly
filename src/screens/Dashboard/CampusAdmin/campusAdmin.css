@@ -42,5 +42,27 @@
 }
 
 .campus_admin_navbar {
-    background: red;
+  background: var(--hb-light-primary);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 40px;
+}
+.campus_admin_navbar button {
+  color: white;
+}
+.campus_admin_navbar a {
+  color: white;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--hb-light-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.campus_admin_navbar a:hover {
+  background: var(--hb-light-secondary);
 }

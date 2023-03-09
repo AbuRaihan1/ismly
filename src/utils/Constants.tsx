@@ -39,7 +39,7 @@ const Constants: any = {
       palette: {
         mode: "light",
         primary: {
-          main: "#ffa726",
+          main: "#ff5200",
         },
         secondary: {
           main: "#f57c00",

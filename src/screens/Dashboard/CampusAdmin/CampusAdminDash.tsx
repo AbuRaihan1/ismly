@@ -1,6 +1,7 @@
-// import { Grid } from "@mui/material";
 import { Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import FixedBottomNavigation from "../../../components/BottomNav/BottomNav";
 import TemporaryDrawer from "../../../components/Drawer/Drawer";
 import LoadingView from "../../../components/loading-view";
 import { CampusAdminDataType } from "../../../utils/ConstType";
@@ -22,7 +23,7 @@ const CampusAdminDash = () => {
         totalTeachers: 23,
         totalStudents: 100,
       });
-    }, 2000);
+    }, 500);
   }, []);
 
   return (
@@ -30,6 +31,7 @@ const CampusAdminDash = () => {
       {isLoading && <LoadingView />}
       <div className="campus_admin_navbar">
         <TemporaryDrawer />
+        <Link to="#">Log out</Link>
       </div>
       <Container>
         <div className="admin_info_area">
@@ -60,6 +62,7 @@ const CampusAdminDash = () => {
           </div>
         </div>
       </Container>
+      <FixedBottomNavigation />
     </>
   );
 };

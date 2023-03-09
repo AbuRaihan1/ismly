@@ -1,11 +1,29 @@
 import Menu from "@mui/icons-material/Menu";
-import { IconButton, Typography } from "@mui/material";
+import { IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import * as React from "react";
-
+import CampusAdminDrawerData from "../../screens/Dashboard/CampusAdmin/CampusAdminDrawerData";
 export default function TemporaryDrawer() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
+  const campusAdminFeature: {
+    icon: any;
+    name: any;
+  }[] = [
+    {
+      icon: "icon",
+      name: "Add Teachers",
+    },
+    {
+      icon: "icon",
+      name: "Add Students",
+    },
+    {
+      icon: "icon",
+      name: "Add Classes",
+    },
+  ];
   return (
     <>
       <IconButton
@@ -22,7 +40,9 @@ export default function TemporaryDrawer() {
         onClose={() => setIsDrawerOpen(false)}
       >
         <Box p={2} width="250px" textAlign="left" role="presentation">
-          <Typography>drawer item</Typography>
+          {campusAdminFeature.map((item, idx) => {
+            return <CampusAdminDrawerData {...item} />;
+          })}
         </Box>
       </Drawer>
     </>

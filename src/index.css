@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 :root {
-  --hb-light-primary: #ffa726;
+  --hb-light-primary: #ff5200;
   --hb-light-secondary: #f57c00;
   --hb-light-background: #f5f5f5;
   --hb-light-text-primary: #333333;
