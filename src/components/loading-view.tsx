@@ -15,13 +15,13 @@ export default function LoadingView() {
         display: "flex",
         width: "100vw",
         height: "100vh",
-        position: "absolute",
+        position: "fixed",
         zIndex: 9,
         alignItems: "center",
         justifyContent: "center",
+        top : '0'
       }}
     >
-      <Avatar src={Constants.images.userProfile} />
       <Paper
         elevation={5}
         sx={{

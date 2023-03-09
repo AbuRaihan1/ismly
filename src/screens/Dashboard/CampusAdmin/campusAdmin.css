@@ -1,0 +1,46 @@
+.admin_info_area {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.admin_photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.common_div {
+  width: 50%;
+  /* border: 2px solid black; */
+  text-align: right;
+}
+
+.admin_text_info {
+  text-align: left !important;
+}
+
+@media screen and (max-width: 762px) {
+  .admin_info_area {
+    display: block;
+    /* text-align: center; */
+  }
+  .common_div {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .admin_text_info {
+    display: flex;
+    /* justify-content: center; */
+  }
+}
+
+.campus_admin_navbar {
+    background: red;
+}

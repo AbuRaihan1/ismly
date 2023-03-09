@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import Constants from "../../../utils/Constants";
 import "./teacher.css";
@@ -30,7 +30,7 @@ const TeacherDashboard = () => {
     },
     {
       icon: Constants.icons.classNotes,
-      name: "class Notes",
+      name: "Class Notes",
     },
     {
       icon: Constants.icons.calendar,
@@ -42,9 +42,17 @@ const TeacherDashboard = () => {
     },
   ];
 
+  const teacherStyle  = {
+    myClasses : {
+        textAlign : 'center',
+        marginBottom : "20px",
+        fontWeight : 'bold'
+    }
+  }
   return (
     <Container>
       <Box className="teacher_option">
+        <Typography variant="h5" sx={teacherStyle.myClasses}>My classes</Typography>
         {teachersOption.map((optin) => {
           return <TeacherOptions {...optin} />;
         })}

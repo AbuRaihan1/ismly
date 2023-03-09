@@ -14,6 +14,7 @@ const TeacherOptions = ({ icon, name }: { icon: any; name: string }) => {
       borderRadius: "5px",
       transition: "all .2s ease-in-out",
       marginBottom: "15px",
+    
     },
 
     optionAvatar: {

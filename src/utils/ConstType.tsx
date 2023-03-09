@@ -1,3 +1,11 @@
 type loginType = "student" | "parents" | "teacher" | "admin" | "campusAdmin";
 
-export type { loginType };
+type CampusAdminDataType = {
+  name: string;
+  profileUrl: string;
+  totalClasses: any;
+  totalTeachers: any;
+  totalStudents: any;
+  email: any;
+};
+export type { loginType, CampusAdminDataType };
