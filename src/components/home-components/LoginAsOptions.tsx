@@ -24,7 +24,6 @@ export default function ({
           borderRadius: "50%",
           borderColor: Constants.colors.lightTheme.palette.primary.main,
           borderWidth: "5px",
-        
         }}
       >
         {/* <EfImageView src={icon} alt={type} /> */}
@@ -38,7 +37,9 @@ export default function ({
               borderWidth: "50px",
             }}
           >
-            <EfImageView src={icon} alt={type} />
+            <div className="option_img_wrapper">
+              <EfImageView src={icon} alt={type}/>
+            </div>
           </Box>
           <p style={{ textTransform: "capitalize" }}> {type} </p>
         </div>

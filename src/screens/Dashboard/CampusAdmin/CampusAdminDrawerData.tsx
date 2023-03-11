@@ -32,7 +32,7 @@ const CampusAdminDrawerData = ({ icon, name }: { icon: any; name: string }) => {
       color: "white",
       borderRadius: "50%",
       marginTop: "8px",
-      border : `1px solid ${Constants.colors.lightTheme.palette.background.paper}`
+      border: `1px solid ${Constants.colors.lightTheme.palette.background.paper}`,
     },
   };
   return (
