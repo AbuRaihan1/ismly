@@ -38,7 +38,7 @@ export default function ({
             }}
           >
             <div className="option_img_wrapper">
-              <EfImageView src={icon} alt={type}/>
+              <img src={icon} alt={type} className="option_img"/>
             </div>
           </Box>
           <p style={{ textTransform: "capitalize" }}> {type} </p>

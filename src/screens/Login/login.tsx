@@ -1,4 +1,4 @@
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LockIcon from "@mui/icons-material/Lock";
 import {
   AppBar,
@@ -141,7 +141,7 @@ export default function LoginScreen() {
             <Toolbar>
               <IconButton onClick={() => setGoback(true)}>
                 <Box>
-                  <ArrowBackIosIcon />
+                  <ArrowBackIcon sx={{color :'white'}} />
                 </Box>
               </IconButton>
             </Toolbar>
