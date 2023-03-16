@@ -42,17 +42,19 @@ const TeacherDashboard = () => {
     },
   ];
 
-  const teacherStyle  = {
-    myClasses : {
-        textAlign : 'center',
-        marginBottom : "20px",
-        fontWeight : 'bold'
-    }
-  }
+  const teacherStyle = {
+    myClasses: {
+      textAlign: "center",
+      marginBottom: "20px",
+      fontWeight: "bold",
+    },
+  };
   return (
     <Container>
       <Box className="teacher_option">
-        <Typography variant="h5" sx={teacherStyle.myClasses}>My classes</Typography>
+        <Typography variant="h5" sx={teacherStyle.myClasses}>
+          My classes
+        </Typography>
         {teachersOption.map((optin) => {
           return <TeacherOptions {...optin} />;
         })}

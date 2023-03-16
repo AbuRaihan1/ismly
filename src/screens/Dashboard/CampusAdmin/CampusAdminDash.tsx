@@ -5,10 +5,13 @@ import FixedBottomNavigation from "../../../components/BottomNav/BottomNav";
 import TemporaryDrawer from "../../../components/Drawer/Drawer";
 import LoadingView from "../../../components/loading-view";
 import { CampusAdminDataType } from "../../../utils/ConstType";
+import CreateTeacher from "../teacher/CreateTeacher/CreateTeacher";
+
 import "./campusAdmin.css";
 const CampusAdminDash = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [campusData, setCampusData] = useState<CampusAdminDataType>();
+  const [uiState, setUiState] = useState("add-teacher");
 
   useEffect(() => {
     setIsLoading(true);
@@ -26,6 +29,41 @@ const CampusAdminDash = () => {
     }, 500);
   }, []);
 
+  const uiContent = () => {
+    if (uiState === "add-teacher") {
+      return (
+        <CreateTeacher />
+        // <div className="admin_info_area">
+        //   <div className="admin_photo common_div">
+        //     <img src={campusData?.profileUrl} alt="" />
+        //   </div>
+        //   <div className="admin_text_info common_div">
+        //     <div>
+        //       <Typography>
+        //         Name : <strong>{campusData?.name || "N/A"}</strong>
+        //       </Typography>
+        //       <Typography>
+        //         Email : <strong>{campusData?.email || "N/A"}</strong>
+        //       </Typography>
+        //       <Typography>
+        //         Total Class :{" "}
+        //         <strong>{campusData?.totalClasses || "N/A"}</strong>
+        //       </Typography>
+        //       <Typography>
+        //         Total Teachers :{" "}
+        //         <strong>{campusData?.totalTeachers || "N/A"}</strong>
+        //       </Typography>
+        //       <Typography>
+        //         Total Students :{" "}
+        //         <strong>{campusData?.totalStudents || "N/A"}</strong>
+        //       </Typography>
+        //     </div>
+        //   </div>
+        // </div>
+      );
+    }
+  };
+
   return (
     <>
       {isLoading && <LoadingView />}
@@ -33,35 +71,7 @@ const CampusAdminDash = () => {
         <TemporaryDrawer />
         <Link to="#">Log out</Link>
       </div>
-      <Container>
-        <div className="admin_info_area">
-          <div className="admin_photo common_div">
-            <img src={campusData?.profileUrl} alt="" />
-          </div>
-          <div className="admin_text_info common_div">
-            <div>
-              <Typography>
-                Name : <strong>{campusData?.name || "N/A"}</strong>
-              </Typography>
-              <Typography>
-                Email : <strong>{campusData?.email || "N/A"}</strong>
-              </Typography>
-              <Typography>
-                Total Class :{" "}
-                <strong>{campusData?.totalClasses || "N/A"}</strong>
-              </Typography>
-              <Typography>
-                Total Teachers :{" "}
-                <strong>{campusData?.totalTeachers || "N/A"}</strong>
-              </Typography>
-              <Typography>
-                Total Students :{" "}
-                <strong>{campusData?.totalStudents || "N/A"}</strong>
-              </Typography>
-            </div>
-          </div>
-        </div>
-      </Container>
+      <Container>{uiContent()}</Container>
       <FixedBottomNavigation />
     </>
   );
