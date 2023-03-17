@@ -12,7 +12,8 @@ import "./campusAdmin.css";
 const CampusAdminDash = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [campusData, setCampusData] = useState<CampusAdminDataType>();
-  const [uiState, setUiState] = useState("add-student");
+  const [uiState, setUiState] = useState("add-teacher");
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,7 +32,7 @@ const CampusAdminDash = () => {
   }, []);
 
   const uiContent = () => {
-    if (uiState === "add-student") {
+    if (uiState === "add-teacher") {
       return (
         // <CreateTeacher />
         <CreateStudent />
@@ -74,7 +75,7 @@ const CampusAdminDash = () => {
         <Link to="#">Log out</Link>
       </div>
       <Container>{uiContent()}</Container>
-      <FixedBottomNavigation />
+      {/* <FixedBottomNavigation /> */}
     </>
   );
 };

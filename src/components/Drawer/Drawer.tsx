@@ -41,7 +41,7 @@ export default function TemporaryDrawer() {
       >
         <Box p={2} width="250px" textAlign="left" role="presentation">
           {campusAdminFeature.map((item, idx) => {
-            return <CampusAdminDrawerData {...item} />;
+            return <CampusAdminDrawerData {...item} key={idx}/>;
           })}
         </Box>
       </Drawer>

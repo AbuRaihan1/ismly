@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Box } from "@mui/system";
@@ -9,11 +9,11 @@ const CreateTeacher = () => {
   return (
     <>
       <Container className="add_teacher_wrapper">
-        <Grid container spacing={2}>
-          <Grid item xs={8}>
+        <Grid container spacing={0}>
+          <Grid item md={8} sm={12}>
             <div className="add_teacher_info">
               <img src={defaultTeacherImg} alt="" />
-              <button>Edit</button>
+              {/* <button>Edit</button> */}
               <div className="teachers_data_inputs">
                 <Box className="input_wrapper">
                   <TextField
@@ -44,7 +44,7 @@ const CreateTeacher = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} sm={12}>
             <UpdateSetting />
           </Grid>
         </Grid>
