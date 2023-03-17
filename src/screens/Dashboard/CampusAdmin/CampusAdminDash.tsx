@@ -5,13 +5,14 @@ import FixedBottomNavigation from "../../../components/BottomNav/BottomNav";
 import TemporaryDrawer from "../../../components/Drawer/Drawer";
 import LoadingView from "../../../components/loading-view";
 import { CampusAdminDataType } from "../../../utils/ConstType";
+import CreateStudent from "../student/CreateStudent/CreateStudent";
 import CreateTeacher from "../teacher/CreateTeacher/CreateTeacher";
 
 import "./campusAdmin.css";
 const CampusAdminDash = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [campusData, setCampusData] = useState<CampusAdminDataType>();
-  const [uiState, setUiState] = useState("add-teacher");
+  const [uiState, setUiState] = useState("add-student");
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,9 +31,10 @@ const CampusAdminDash = () => {
   }, []);
 
   const uiContent = () => {
-    if (uiState === "add-teacher") {
+    if (uiState === "add-student") {
       return (
-        <CreateTeacher />
+        // <CreateTeacher />
+        <CreateStudent />
         // <div className="admin_info_area">
         //   <div className="admin_photo common_div">
         //     <img src={campusData?.profileUrl} alt="" />
