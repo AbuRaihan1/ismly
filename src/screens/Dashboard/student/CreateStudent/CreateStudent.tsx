@@ -78,8 +78,8 @@ const CreateStudent = () => {
                     </Select>
                   </Box>
                   <br />
-                  <FilledInput />
-                </Box>
+                  <textarea placeholder="Hometown"></textarea>
+                  </Box>
               </div>
             </div>
           </Grid>

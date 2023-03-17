@@ -56,3 +56,16 @@
 .input_wrapper {
   text-align: center;
 }
+
+
+/* under the code create studnet files */
+.input_wrapper textarea {
+  width: 90%;
+  height: 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.input_wrapper textarea:focus {
+  outline: 2px solid var(--hb-light-primary) !important;
+}
