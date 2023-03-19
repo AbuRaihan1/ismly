@@ -24,6 +24,16 @@ export default function TemporaryDrawer() {
       name: "Add Classes",
     },
   ];
+
+  const drawerStyle = {
+    drawerTagStyle: {
+      margin: "0px",
+      borderBottom: "1px solid lightgray",
+      fontSize: "18px",
+      padding: "4px 10px",
+      color: "black",
+    },
+  };
   return (
     <>
       <IconButton
@@ -39,9 +49,13 @@ export default function TemporaryDrawer() {
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
       >
+        <p style={drawerStyle.drawerTagStyle}>Settings</p>
+        <p style={{ margin: "0px" }}>My Account</p>
+
+        <p style={drawerStyle.drawerTagStyle}>School Data</p>
         <Box p={2} width="250px" textAlign="left" role="presentation">
           {campusAdminFeature.map((item, idx) => {
-            return <CampusAdminDrawerData {...item} key={idx}/>;
+            return <CampusAdminDrawerData {...item} key={idx} />;
           })}
         </Box>
       </Drawer>

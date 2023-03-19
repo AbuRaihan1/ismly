@@ -8,6 +8,7 @@ import CreateTeacher from "./CreateTeacher/CreateTeacher";
 
 import "./campusAdmin.css";
 import CreateStudent from "./CreateStudent/CreateStudent";
+import AddClass from "./AddClass/AddClass";
 const CampusAdminDash = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [campusData, setCampusData] = useState<CampusAdminDataType>();
@@ -32,7 +33,8 @@ const CampusAdminDash = () => {
   const uiContent = () => {
     if (uiState === "add-teacher") {
       return (
-        <CreateTeacher />
+        // <CreateTeacher />
+        <AddClass />
         // <CreateStudent />
         // <div className="admin_info_area">
         //   <div className="admin_photo common_div">

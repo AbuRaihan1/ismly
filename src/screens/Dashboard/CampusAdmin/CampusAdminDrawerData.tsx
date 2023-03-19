@@ -27,9 +27,10 @@ const CampusAdminDrawerData = ({ icon, name }: { icon: any; name: string }) => {
   };
   return (
     <div>
-      <Box sx={drawerStyle.drawerItemStyle} className="drawer_option">
+      <Box sx={drawerStyle.drawerItemStyle} className="drawer_option">    
         <AddIcon sx={drawerStyle.addIcon} />
         <p style={{ margin: "0px" }}>{name}</p>
+
         <p>
           {/* <EfImageView
             src={require("../../../assets/icons/instruction.png")}
