@@ -18,7 +18,7 @@ const CreateTeacher = () => {
                 <Box className="input_wrapper">
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
                     label="First name"
@@ -26,7 +26,7 @@ const CreateTeacher = () => {
                   />
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
                     label="Last name"
@@ -34,7 +34,7 @@ const CreateTeacher = () => {
                   />
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
                     label="Email"
@@ -44,7 +44,7 @@ const CreateTeacher = () => {
               </div>
             </div>
           </Grid>
-          <Grid item md={4} sm={12}>
+          <Grid item md={4} sm={12} xs={12}>
             <UpdateSetting />
           </Grid>
         </Grid>

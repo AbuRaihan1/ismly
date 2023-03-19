@@ -34,8 +34,8 @@ const CampusAdminDash = () => {
   const uiContent = () => {
     if (uiState === "add-teacher") {
       return (
-        // <CreateTeacher />
-        <CreateStudent />
+        <CreateTeacher />
+        // <CreateStudent />
         // <div className="admin_info_area">
         //   <div className="admin_photo common_div">
         //     <img src={campusData?.profileUrl} alt="" />
