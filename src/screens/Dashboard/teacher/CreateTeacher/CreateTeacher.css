@@ -7,7 +7,9 @@
 
 .teachers_data_inputs {
   padding-bottom: 20px;
+  margin-top: 20px;
 }
+
 .right_side_setting li {
   list-style-type: none;
   font-weight: 500;
@@ -57,15 +59,22 @@
   text-align: center;
 }
 
-
 /* under the code create studnet files */
 .input_wrapper textarea {
-  width: 90%;
+  width: 100%;
   height: 100px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  padding: 10px;
+  resize: none;
 }
 
 .input_wrapper textarea:focus {
   outline: 2px solid var(--hb-light-primary) !important;
+
+  font-size: 18px;
+}
+
+.input_wrapper textarea::placeholder {
+  font-size: 18px;
 }

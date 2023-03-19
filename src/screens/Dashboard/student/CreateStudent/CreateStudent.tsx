@@ -20,7 +20,7 @@ const CreateStudent = () => {
     <>
       <Container className="add_teacher_wrapper">
         <Grid container spacing={2}>
-          <Grid item xs={8}>
+          <Grid item md={8} sm={12}>
             <div className="add_teacher_info">
               <img src={defaultStudent} alt="" />
               {/* <button>Edit</button> */}
@@ -28,23 +28,16 @@ const CreateStudent = () => {
                 <Box className="input_wrapper">
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
-                    label="First name"
+                    label="Name"
                     variant="outlined"
                   />
+
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
-                    size="small"
-                    id="outlined-basic"
-                    label="Last name"
-                    variant="outlined"
-                  />
-                  <TextField
-                    className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
                     label="Email"
@@ -52,25 +45,18 @@ const CreateStudent = () => {
                   />
                   <TextField
                     className="input"
-                    sx={{ width: "90%" }}
+                    sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
                     label="Phone"
                     variant="outlined"
                   />
-                  <TextField
-                    className="input"
-                    sx={{ width: "90%" }}
-                    size="small"
-                    id="outlined-basic"
-                    label="Student Id"
-                    variant="outlined"
-                  />
+
                   <Box>
                     <Select
                       value={gender}
                       onChange={(e) => setGender(e.target.value)}
-                      sx={{ width: "90%" }}
+                      sx={{ width: "100%" }}
                     >
                       <MenuItem value="male">Male</MenuItem>
                       <MenuItem value="female">Female</MenuItem>
@@ -79,11 +65,12 @@ const CreateStudent = () => {
                   </Box>
                   <br />
                   <textarea placeholder="Hometown"></textarea>
-                  </Box>
+                  <textarea placeholder="Allergies"></textarea>
+                </Box>
               </div>
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} sm={12} xs={12}>
             <UpdateSetting />
           </Grid>
         </Grid>

@@ -9,7 +9,7 @@ const CreateTeacher = () => {
   return (
     <>
       <Container className="add_teacher_wrapper">
-        <Grid container spacing={0}>
+        <Grid container spacing={2}>
           <Grid item md={8} sm={12}>
             <div className="add_teacher_info">
               <img src={defaultTeacherImg} alt="" />
