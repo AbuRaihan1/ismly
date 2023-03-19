@@ -1,19 +1,17 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import FixedBottomNavigation from "../../../components/BottomNav/BottomNav";
 import TemporaryDrawer from "../../../components/Drawer/Drawer";
 import LoadingView from "../../../components/loading-view";
 import { CampusAdminDataType } from "../../../utils/ConstType";
-import CreateStudent from "../student/CreateStudent/CreateStudent";
-import CreateTeacher from "../teacher/CreateTeacher/CreateTeacher";
+import CreateTeacher from "./CreateTeacher/CreateTeacher";
 
 import "./campusAdmin.css";
+import CreateStudent from "./CreateStudent/CreateStudent";
 const CampusAdminDash = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [campusData, setCampusData] = useState<CampusAdminDataType>();
   const [uiState, setUiState] = useState("add-teacher");
-
 
   useEffect(() => {
     setIsLoading(true);

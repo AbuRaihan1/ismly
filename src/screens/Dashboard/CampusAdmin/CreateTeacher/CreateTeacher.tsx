@@ -1,28 +1,18 @@
-import {
-  Box,
-  Container,
-  FilledInput,
-  Grid,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
-import { useState } from "react";
-// import Select from '@mui/joy/Select';
-
-import defaultStudent from "../../../../../src/assets/images/defaultStudent.jpg";
-import "../../teacher/CreateTeacher/CreateTeacher.css";
+import { Container } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import { Box } from "@mui/system";
+import defaultTeacherImg from "../../../../../src/assets/images/defaultTeacher.png";
 import UpdateSetting from "../../updateSetting/UpdateSetting";
-const CreateStudent = () => {
-  const [gender, setGender] = useState<string>("male");
-
+import "../CreateSomething.css";
+const CreateTeacher = () => {
   return (
     <>
       <Container className="add_teacher_wrapper">
         <Grid container spacing={2}>
           <Grid item md={8} sm={12}>
             <div className="add_teacher_info">
-              <img src={defaultStudent} alt="" />
+              <img src={defaultTeacherImg} alt="" />
               {/* <button>Edit</button> */}
               <div className="teachers_data_inputs">
                 <Box className="input_wrapper">
@@ -31,10 +21,17 @@ const CreateStudent = () => {
                     sx={{ width: "100%" }}
                     size="small"
                     id="outlined-basic"
-                    label="Name"
+                    label="First name"
                     variant="outlined"
                   />
-
+                  <TextField
+                    className="input"
+                    sx={{ width: "100%" }}
+                    size="small"
+                    id="outlined-basic"
+                    label="Last name"
+                    variant="outlined"
+                  />
                   <TextField
                     className="input"
                     sx={{ width: "100%" }}
@@ -43,29 +40,6 @@ const CreateStudent = () => {
                     label="Email"
                     variant="outlined"
                   />
-                  <TextField
-                    className="input"
-                    sx={{ width: "100%" }}
-                    size="small"
-                    id="outlined-basic"
-                    label="Phone"
-                    variant="outlined"
-                  />
-
-                  <Box>
-                    <Select
-                      value={gender}
-                      onChange={(e) => setGender(e.target.value)}
-                      sx={{ width: "100%" }}
-                    >
-                      <MenuItem value="male">Male</MenuItem>
-                      <MenuItem value="female">Female</MenuItem>
-                      <MenuItem value="other">Other</MenuItem>
-                    </Select>
-                  </Box>
-                  <br />
-                  <textarea placeholder="Hometown"></textarea>
-                  <textarea placeholder="Allergies"></textarea>
                 </Box>
               </div>
             </div>
@@ -79,4 +53,4 @@ const CreateStudent = () => {
   );
 };
 
-export default CreateStudent;
+export default CreateTeacher;
