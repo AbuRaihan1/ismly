@@ -12,7 +12,7 @@ import { useState } from "react";
 import defaultStudent from "../../../../../src/assets/images/defaultStudent.jpg";
 import UpdateSetting from "../../updateSetting/UpdateSetting";
 // import "../CreateTeacher/CreateTeacher.css";
-import "../CreateSomething.css"
+import "../CreateSomething.css";
 const CreateStudent = () => {
   const [gender, setGender] = useState<string>("male");
 
@@ -71,7 +71,16 @@ const CreateStudent = () => {
             </div>
           </Grid>
           <Grid item md={4} sm={12} xs={12}>
-            <UpdateSetting />
+            <UpdateSetting
+              data={[
+                {
+                  text: "Add Teacher",
+                  onPress: () => {
+                    alert("add teacher clicked");
+                  },
+                },
+              ]}
+            />
           </Grid>
         </Grid>
       </Container>

@@ -45,7 +45,22 @@ const CreateTeacher = () => {
             </div>
           </Grid>
           <Grid item md={4} sm={12} xs={12}>
-            <UpdateSetting />
+            <UpdateSetting
+              data={[
+                {
+                  text: "Add Teacher",
+                  onPress: () => {
+                    alert("add teacher clicked");
+                  },
+                },
+                {
+                  text: "edit teacher",
+                  onPress: () => {
+                    alert("edit teacher pressed");
+                  },
+                },
+              ]}
+            />
           </Grid>
         </Grid>
       </Container>

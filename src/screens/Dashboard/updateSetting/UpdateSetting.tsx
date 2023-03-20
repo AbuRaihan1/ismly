@@ -1,10 +1,15 @@
-const UpdateSetting = () => {
+import { Button } from "@mui/material";
+
+const UpdateSetting = ({
+  data,
+}: {
+  data: { text: string; onPress: () => void }[];
+}) => {
   return (
     <div className="right_side_setting">
-      <li>Save changes</li>
-      <li>Save changes & add next</li>
-      <li>Upload teachers</li>
-      <li>Get help via email</li>
+      {data.map((d) => (
+        <Button onClick={d.onPress}>{d.text}</Button>
+      ))}
     </div>
   );
 };

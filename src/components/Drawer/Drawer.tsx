@@ -13,11 +13,19 @@ export default function TemporaryDrawer() {
   }[] = [
     {
       icon: "icon",
+      name: "Teachers",
+    },
+    {
+      icon: "icon",
       name: "Add Teachers",
     },
     {
       icon: "icon",
       name: "Add Students",
+    },
+    {
+      icon: "icon",
+      name: "Add Classes",
     },
     {
       icon: "icon",

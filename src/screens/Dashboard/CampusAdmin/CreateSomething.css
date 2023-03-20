@@ -1,81 +1,83 @@
 .add_teacher_wrapper {
-    margin-top: 30px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    padding-top: 20px;
-  }
-  
-  .teachers_data_inputs {
-    padding-bottom: 20px;
-    margin-top: 20px;
-  }
-  
-  .right_side_setting li {
-    list-style-type: none;
-    font-weight: 500;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 8px;
-    background: #e9e4e4;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  .right_side_setting li:hover {
-    background: #d8d4d4;
-    color: var(--hb-light-primary);
-  }
-  
-  .add_teacher_info img {
-    margin: auto;
-    display: block;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: 1px solid lightgray;
-  }
-  
-  .add_teacher_info button {
-    border: none;
-    outline: none;
-    background: var(--hb-light-primary);
-    color: white;
-    font-weight: 500;
-    font-size: 20px;
-    display: block;
-    margin: auto;
-    padding: 8px 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .teachers_data_inputs .input {
-    margin-bottom: 12px;
-  }
-  
-  .input_wrapper {
-    text-align: center;
-  }
-  
-  /* under the code create studnet files */
-  .input_wrapper textarea {
-    width: 100%;
-    height: 100px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    padding: 10px;
-    resize: none;
-  }
-  
-  .input_wrapper textarea:focus {
-    outline: 2px solid var(--hb-light-primary) !important;
-  
-    font-size: 18px;
-  }
-  
-  .input_wrapper textarea::placeholder {
-    font-size: 18px;
-  }
-  
+  margin-top: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-top: 20px;
+}
+
+.teachers_data_inputs {
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.right_side_setting {
+  display: flex;
+  flex-direction: column;
+}
+.right_side_setting Button {
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  background: #e9e4e4;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.right_side_setting li:hover {
+  background: #d8d4d4;
+  color: var(--hb-light-primary);
+}
+
+.add_teacher_info img {
+  margin: auto;
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+}
+
+.add_teacher_info button {
+  border: none;
+  outline: none;
+  background: var(--hb-light-primary);
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  margin: auto;
+  padding: 8px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.teachers_data_inputs .input {
+  margin-bottom: 12px;
+}
+
+.input_wrapper {
+  text-align: center;
+}
+
+/* under the code create studnet files */
+.input_wrapper textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
+
+.input_wrapper textarea:focus {
+  outline: 2px solid var(--hb-light-primary) !important;
+
+  font-size: 18px;
+}
+
+.input_wrapper textarea::placeholder {
+  font-size: 18px;
+}
